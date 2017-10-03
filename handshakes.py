@@ -4,6 +4,9 @@
 #  Given a number of people, determine how many handshakes are necessary 
 #  to ensure that everyone has shaken the hand of everyone else.
 
+import sys
+
+sys.setrecursionLimit(1100)
 
 handshake_cache = {}
 
