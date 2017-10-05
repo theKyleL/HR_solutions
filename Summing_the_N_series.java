@@ -1,38 +1,26 @@
-/* 
-Hackerrank problem
-Summing the N series
+import java.io.*;
+import java.util.*;
 
-Solution by Kyle Latino
-*/
+public class Summing_the_N_series {
 
-import java.io.scanner;
-
-class Summing_the_N_series{
-
-        // global vars
-        int testCases;
-        int input;
-        
         // methods
         // find the sum of the series and print to stdout
-        public int solve(int input){
+        int solve(int input){
                 if (input<2){
                         return 1;
                 }else{
-                        return (input^2 - (solve(input-1))^2;
+                        return (input^2 - (solve(input-1))^2);
                 }
         }
         
         // main function
         public static void main(String[] args){
-        
-                Scanner sc = new Scanner();
-                testCases = sc.readInt();
-                
+   
+                Scanner sc = new Scanner(System.in);
+                int testCases = sc.nextInt();
+            
                 for(int i=0; i<testCases; i++){
-                        input = sc.readInt();
-                        System.out.println(solve(input));
+                        System.out.println(solve(sc.nextInt()));
                 }
-                
         }
 }
