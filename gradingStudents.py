@@ -15,29 +15,48 @@ For example, 84 will be rounded to 85 but 29 will not be rounded because the rou
 Given the initial value of grade for each of Sam's n students, write code to automate the rounding process. For each grade, round it according to the rules above and print the result on a new line.
 
 """
+
+
 __author__ = 'Kyle Latino'
+
 
 #!/bin/python3
 
+
 import sys
 
+
 def solve(grades):
-    # Complete this function
-    for i in range(len(grades)):
-        if grades[i] > 37:
-            roundDiff = grades[i]%5
-#            print(roundDiff)
-            if roundDiff > 2:
+    """
+    Input: Initial list of int values (grades)
+    Output: Rounded list of int values 
+    
+    Round list values based on specified rules
+    """
+
+    
+    for i in range(len(grades)):  # iterate over list
+        if grades[i] > 37:  # check that grades fall into 'roundable' values
+            roundDiff = grades[i]%5  # determine the distance from the previous multiple of 5
+
+
+            if roundDiff > 2:  # round up when the distance from the previous multiple of 5 is greater than 2
                 grades[i] += (5-roundDiff)
-#        print(grades[i])
-    return grades
+
+
+   return grades. # return the new list
+
 
 if __name__ == "__main__":
     n = int(input().strip())
     grades = []
     grades_i = 0
+
+
     for grades_i in range(n):
         grades_t = int(input().strip())
         grades.append(grades_t)
+
+
     result = solve(grades)
     print ("\n".join(map(str, result)))
