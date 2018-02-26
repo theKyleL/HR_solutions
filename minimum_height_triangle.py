@@ -24,8 +24,8 @@ def findH():
 		thus: h = area / (1/2) base
 		or: h = 2a / b
 	"""
-	h = (2*a) / b
-	h = math.ceil(h)
+	h = (2*a) / b # calculate the precise value for h
+	h = math.ceil(h) # round h up to the next integer value 
 	return h
 
 
