@@ -16,7 +16,7 @@ his bases?
 
 
 # imports
-
+import math
 
 # globals
 n, m = 0, 0
@@ -33,13 +33,14 @@ def readInputs():
 
 def findMinimumDrops(n, m):
 	"""
-	Determine the number of edges on each row and column on the grid
+	Determine the number of edges on each row and column on the grid.
 	"""
+    
 	if n>1:
-		n = int(n/2) #+ 1
+		n = math.ceil(n/2)
 
 	if m>1:
-		m = int(m/2) #+ 1
+		m = math.ceil(m/2)
 
 	return n*m
 
