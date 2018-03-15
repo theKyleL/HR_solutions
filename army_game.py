@@ -36,10 +36,10 @@ def findMinimumDrops(n, m):
 	Determine the number of edges on each row and column on the grid
 	"""
 	if n>1:
-		n = n-1
+		n = int(n/2) #+ 1
 
 	if m>1:
-		m = m-1
+		m = int(m/2) #+ 1
 
 	return n*m
 
