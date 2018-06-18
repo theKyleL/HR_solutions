@@ -31,11 +31,21 @@ def solve(n):
 
 # calculate and return the sum of the digits
 def calcSumOfDigits(n):
-	pass
+	sum = 0
+	number = n
+	while number > 0:
+		sum += number % 10  # add the digit in the 1's place to the sum
+		number = number // 10  # truncate the digit in the 1's place
+	return sum
 
 
 # calculate and return the sum of the prime factors
 def calcSumFactors(n):
+	sum = 0
+	return sum
+
+
+def findPrimeFactors(n):
 	pass
 
 
