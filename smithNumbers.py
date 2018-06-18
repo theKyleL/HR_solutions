@@ -42,21 +42,44 @@ def calcSumOfDigits(n):
 # calculate and return the sum of the prime factors
 def calcSumFactors(n):
 	sum = 0
+
+	# make a list of factors
+	factors = findPrimeFactors(n)
+	for x in factors:
+		sum += calcSumOfDigits(x)
 	return sum
 
 
 def findPrimeFactors(n):
-	pass
+	primeList = getPrimeList((n+1)//2)
+	primeFactors = list()
+	temp = n
+
+	#  determine prime factors of value 'n'
+	for i in primeList:
+		while temp % i == 0:
+			primeFactors.append(i)
+			temp = temp / i
+	return primeFactors
+
+
+# Sieve of Eratosthenes 
+# implementation by Srikar Appalaraju on StackOverflow.com
+def getPrimeList(limit):
+    limitn = limit+1
+    primes = dict()
+    for i in range(2, limitn): primes[i] = True
+
+    for i in primes:
+        factors = range(i,limitn, i)
+        for f in factors[1:]:
+            primes[f] = False
+    return [i for i in primes if primes[i]==True]
 
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     n = int(input())
-
     result = solve(n)
-
     fptr.write(str(result) + '\n')
-
     fptr.close()
-
